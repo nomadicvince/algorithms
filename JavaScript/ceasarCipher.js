@@ -1,4 +1,6 @@
-function caesarCipher(string, num) {
+//Shifts letters according to number called in function and returns string
+
+ caesarCipher(string, num) {
   num = num % 26;
   let lowerCase = string.toLowerCase();
   let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -29,4 +31,4 @@ function caesarCipher(string, num) {
   return newString;
 }
 
-caesarCipher("Elite Dangerous", 2); 
+caesarCipher("Elite Dangerous", 2); // returns Gnkvg Fcpigtqwu after shifting by 2
