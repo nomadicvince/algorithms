@@ -29,6 +29,6 @@
   }
 
   return newString;
-}
+};
 
 caesarCipher("Elite Dangerous", 2); // returns Gnkvg Fcpigtqwu after shifting by 2
