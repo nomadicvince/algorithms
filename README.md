@@ -1,2 +1,2 @@
 # Algorithms
-Ongoing study of JavaScript and PHP algorithms
+Ongoing study of JavaScript and PHP algorithms and data structures
