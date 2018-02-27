@@ -51,10 +51,11 @@ function slowFib(n) {
     return n;
   }
 
-  return slowFib(n - 1) + slowFib(n - 2);
+  return fib(n - 1) + fib(n - 2);
 }
 
-const fib = memoize(slowFib)
+const fib = memoize(slowFib);
+fib(200);
 
 //2nd fibonacci algorithm with memoization - O(n) runtime
 
