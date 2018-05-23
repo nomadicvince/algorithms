@@ -1,23 +1,55 @@
-class Stack {
+export default class Stack {
+  //constructor
   constructor() {
-    this.data = [];
+    this.count = 0;
+    this.items = {};
   }
 
-  push(record) {
-    this.data.push(record);
+  //methods
+  push(element) {
+    this.items[this.count] = element;
+    this.count++;
+  }
+
+  size() {
+    return this.count;
+  }
+
+  isEmpty() {
+    return this.count === 0;
   }
 
   pop() {
-    return this.data.pop();
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    this.count--;
+    const result = this.items[this.count];
+    delete this.items[this.count];
+    return result;
   }
 
   peek() {
-    return this.data[this.data.length - 1];
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    return this.items[this.count - 1];
+  }
+
+  clear() {
+    this.items = {};
+    this.count = 0;
+  }
+
+  toString() {
+    if (this.isEmpty()) {
+      return '';
+    }
+    let objString = `${this.items[0]}`;
+    for (let i = 1; i < this.count; i++) {
+      objString = `${objString},${this.items[i]}`;
+    }
+    return objString;
   }
 }
-
-  const s = new Stack();
-  s.push(1);
-  s.push(2);
-  s.pop(); // returns 2
-  s.pop(); // returns 1
